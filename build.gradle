@@ -30,6 +30,7 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    testImplementation group: 'org.mockito', name: 'mockito-inline', version: '4.3.1'
     implementation 'org.webjars:jquery:3.6.0'
     implementation 'org.webjars:bootstrap:5.1.1'
     implementation 'org.webjars:popper.js:2.9.3'

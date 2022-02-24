@@ -26,6 +26,4 @@ public class DummyTest {
         assertEquals(dummyWeapon, mockDummy.getWeapon());
         assertTrue(mockDummy.getDummyLog() instanceof ArrayList);
     }
-
-    // Todo: Add quality check method test
 }

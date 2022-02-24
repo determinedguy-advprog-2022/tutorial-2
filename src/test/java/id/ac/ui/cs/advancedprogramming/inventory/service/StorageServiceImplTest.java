@@ -45,8 +45,7 @@ public class StorageServiceImplTest {
         String weapon = "Sword";
 
         storageService.createDummy(weight, type, weapon);
-        dummyStorage.createDummy(weight, type, weapon);
 
-        verify(dummyStorage, atLeastOnce()).createDummy(weight, type, weapon);
+        verify(dummyStorage, times(1)).createDummy(weight, type, weapon);
     }
 }

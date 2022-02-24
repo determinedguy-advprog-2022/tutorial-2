@@ -1,11 +1,8 @@
 package id.ac.ui.cs.advancedprogramming.controlwand.core.entity.familiar;
 
-import id.ac.ui.cs.advancedprogramming.controlwand.core.entity.MagicalEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
-import java.lang.reflect.Field;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -36,10 +33,6 @@ public class FamiliarTest {
 
         familiar.seal();
 
-        Field currentStateField = MagicalEntity.class.getDeclaredField("currentState");
-        currentStateField.setAccessible(true);
-        currentStateField.set(familiar, sealedState);
-
         assertEquals(sealedState, familiar.getCurrentState());
     }
 
@@ -48,10 +41,6 @@ public class FamiliarTest {
         FamiliarState summonedState = FamiliarState.SUMMONED;
 
         familiar.summon();
-
-        Field currentStateField = MagicalEntity.class.getDeclaredField("currentState");
-        currentStateField.setAccessible(true);
-        currentStateField.set(familiar, summonedState);
 
         assertEquals(summonedState, familiar.getCurrentState());
     }

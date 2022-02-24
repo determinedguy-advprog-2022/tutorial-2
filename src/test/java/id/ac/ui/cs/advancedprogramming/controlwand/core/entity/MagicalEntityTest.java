@@ -65,6 +65,4 @@ public class MagicalEntityTest {
         assertEquals(definedStateString, calledGetLifeArchive.get(0));
         assertEquals(definedStateString, calledGetLifeArchive.get(1));
     }
-
-    // Todo: create test for undo method
 }
