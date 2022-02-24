@@ -52,7 +52,6 @@ public class ControlWandTest {
         controlWand.registerSpell(spell);
 
         controlWand.cast(spellName);
-        spell.cast();
         verify(spell, times(1)).cast();
     }
 
@@ -62,10 +61,9 @@ public class ControlWandTest {
         Spell spell = Mockito.mock(Spell.class);
         when(spell.spellName()).thenReturn(spellName);
         controlWand.registerSpell(spell);
-
+        controlWand.cast(spellName);
         controlWand.undo();
-        spell.undo();
-        verify(spell, atLeastOnce()).undo();
+        verify(spell, times(1)).undo();
     }
 
     @Test
