@@ -8,6 +8,7 @@ public class MagicTool extends MagicalEntity {
     public MagicTool(String name) {
         super(name);
         currentState = ManaIntensity.NONE;
+        defaultState = ManaIntensity.NONE;
     }
 
     @Override
@@ -16,18 +17,30 @@ public class MagicTool extends MagicalEntity {
     }
 
     public void off() {
-        // TODO: Complete Me
+        // Set intensity to none
+        currentState = ManaIntensity.NONE;
+        // Add current intensity to history
+        addToStateHistory(this.currentState);
     }
 
     public void low() {
-        // TODO: Complete Me
+        // Set intensity to low
+        currentState = ManaIntensity.LOW;
+        // Add current intensity to history
+        addToStateHistory(this.currentState);
     }
 
     public void medium() {
-        // TODO: Complete Me
+        // Set intensity to medium
+        currentState = ManaIntensity.MEDIUM;
+        // Add current intensity to history
+        addToStateHistory(this.currentState);
     }
 
     public void high() {
-        // TODO: Complete Me
+        // Set intensity to high
+        currentState = ManaIntensity.HIGH;
+        // Add current intensity to history
+        addToStateHistory(this.currentState);
     }
 }

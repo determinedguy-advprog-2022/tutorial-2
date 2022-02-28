@@ -5,6 +5,7 @@ import id.ac.ui.cs.advancedprogramming.controlwand.core.entity.familiar.Familiar
 import id.ac.ui.cs.advancedprogramming.controlwand.core.entity.magictool.MagicTool;
 import id.ac.ui.cs.advancedprogramming.controlwand.core.entity.magictool.ManaIntensity;
 
+import id.ac.ui.cs.advancedprogramming.controlwand.core.spell.*;
 import id.ac.ui.cs.advancedprogramming.controlwand.repository.ControlWand;
 import id.ac.ui.cs.advancedprogramming.controlwand.repository.EntityCollection;
 import org.springframework.stereotype.Service;
@@ -44,12 +45,34 @@ public class ControlWandServiceImpl implements ControlWandService {
     @Override
     public void contractFamiliar(String name) {
         Familiar familiar = new Familiar(name);
-        // TODO: Register spells
+        entities.registerEntity(familiar);
+
+        SpellFamiliarSeal spellFamiliarSeal = new SpellFamiliarSeal(familiar);
+        SpellFamiliarSummon spellFamiliarSummon = new SpellFamiliarSummon(familiar);
+
+        controlWand.registerSpell(spellFamiliarSeal);
+        controlWand.registerSpell(spellFamiliarSummon);
     }
 
     @Override
     public void buyMagicTool(String name, EnumSet<ManaIntensity> requiredSpells) {
         MagicTool tool = new MagicTool(name);
-        // TODO: Register spells
+        entities.registerEntity(tool);
+
+        SpellManaOff spellManaOff = new SpellManaOff(tool);
+        controlWand.registerSpell(spellManaOff);
+
+        if (requiredSpells.contains(ManaIntensity.LOW)) {
+            SpellManaLow spellManaLow = new SpellManaLow(tool);
+            controlWand.registerSpell(spellManaLow);
+        }
+        if (requiredSpells.contains(ManaIntensity.MEDIUM)) {
+            SpellManaMedium spellManaMedium = new SpellManaMedium(tool);
+            controlWand.registerSpell(spellManaMedium);
+        }
+        if (requiredSpells.contains(ManaIntensity.HIGH)) {
+            SpellManaHigh spellManaHigh = new SpellManaHigh(tool);
+            controlWand.registerSpell(spellManaHigh);
+        }
     }
 }

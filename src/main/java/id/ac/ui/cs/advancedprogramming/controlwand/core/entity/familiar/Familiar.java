@@ -8,6 +8,7 @@ public class Familiar extends MagicalEntity {
     public Familiar(String name) {
         super(name);
         currentState = FamiliarState.SEALED;
+        defaultState = FamiliarState.SEALED;
     }
 
     @Override
@@ -16,11 +17,17 @@ public class Familiar extends MagicalEntity {
     }
 
     public void seal() {
-        // TODO: Complete Me
+        // Set state to sealed
+        currentState = FamiliarState.SEALED;
+        // Add current state to history
+        addToStateHistory(this.currentState);
     }
 
     public void summon() {
-        // TODO: Complete Me
+        // Set state to summoned
+        currentState = FamiliarState.SUMMONED;
+        // Add current state to history
+        addToStateHistory(this.currentState);
     }
 
 }
