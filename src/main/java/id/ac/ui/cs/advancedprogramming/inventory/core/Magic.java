@@ -19,7 +19,9 @@ public class Magic extends Dummy {
     @Override
     public void activation() {
         this.isDummyTrainingActivated = true;
+        this.dummyLog.add("Dummy training is activated.");
         this.isWeaponActivated = true;
+        this.dummyLog.add(String.format("Weapon %s is activated.", this.weapon));
     }
 
 }
