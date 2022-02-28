@@ -33,6 +33,10 @@ public abstract class Dummy {
     }
 
     public void qualityCheck() {
-        // TODO: Complete Me
+        weightAdjustment();
+        movesetTesting();
     }
+
+    public abstract void weightAdjustment();
+    public abstract void movesetTesting();
 }
