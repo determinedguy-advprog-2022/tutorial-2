@@ -27,7 +27,7 @@ public class StorageServiceImpl implements StorageService {
 
     @Override
     public void createDummy(float weight, DummyType type, String weapon) {
-        // TODO: Complete Me
+        repository.createDummy(weight, type, weapon);
     }
 
     @Override

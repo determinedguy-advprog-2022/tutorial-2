@@ -8,6 +8,8 @@ public abstract class Dummy {
     protected String weapon;
     protected List<String> dummyLog;
     protected float weight;
+    protected boolean isDummyTrainingActivated;
+    protected boolean isWeaponActivated;
 
     public Dummy(float weight, DummyType type, String weapon) {
         this.weight = weight;
@@ -33,6 +35,19 @@ public abstract class Dummy {
     }
 
     public void qualityCheck() {
-        // TODO: Complete Me
+        weightAdjustment();
+        activation();
+        movesetTesting();
+        deactivation();
     }
+
+    public abstract void weightAdjustment();
+    public abstract void movesetTesting();
+    public abstract void activation();
+
+    public void deactivation() {
+        this.isWeaponActivated = false;
+        this.isDummyTrainingActivated = false;
+    }
+
 }
