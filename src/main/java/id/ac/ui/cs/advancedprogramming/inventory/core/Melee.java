@@ -18,10 +18,10 @@ public class Melee extends Dummy {
     }
 
     @Override
-    public void activation() {
+    public void activation() {    
+        // Melee is not required to be activated
         this.isDummyTrainingActivated = true;
         this.dummyLog.add("Dummy training is activated.");
-        this.isWeaponActivated = true;
     }
 
 }
