@@ -47,9 +47,7 @@ public abstract class Dummy {
 
     public void deactivation() {
         this.isWeaponActivated = false;
-        this.dummyLog.add(String.format("Weapon %s is deactivated.", this.weapon));
         this.isDummyTrainingActivated = false;
-        this.dummyLog.add("Dummy training is deactivated.");
     }
 
 }
