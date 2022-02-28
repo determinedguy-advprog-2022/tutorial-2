@@ -17,4 +17,11 @@ public class Melee extends Dummy {
         this.dummyLog.addAll(Arrays.asList("Attack", "Attack", "Attack", "Attack", "Defense", "Attack", "Defense"));
     }
 
+    @Override
+    public void activation() {
+        this.isDummyTrainingActivated = true;
+        this.dummyLog.add("Dummy training is activated.");
+        this.isWeaponActivated = true;
+    }
+
 }
