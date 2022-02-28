@@ -5,3 +5,4 @@ public interface Spell {
     public void undo();
     public String spellName();
 }
+
